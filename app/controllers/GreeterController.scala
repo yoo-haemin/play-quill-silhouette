@@ -6,6 +6,7 @@ import play.api.libs.json.Json
 import play.api.mvc.{AbstractController, ControllerComponents}
 import play.twirl.api.Html
 import services.GreetingService
+import view.scalatagsWritable
 
 class GreeterController(greetingService: GreetingService,
                         langs: Langs,
@@ -25,7 +26,7 @@ class GreeterController(greetingService: GreetingService,
   }
 
   def index = Action {
-    Ok(Html("<h1>Welcome</h1><p>Your new application is ready.</p>"))
+    Ok(view.Index())
   }
 
 }
